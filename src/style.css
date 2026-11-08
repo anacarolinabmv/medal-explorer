@@ -1,0 +1,514 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+	--main-bg-color: #f2f2f2;
+
+	--dark-green: #00474b;
+	--white: #fff;
+	--dark-grey: #333;
+	--light-grey: #ddd;
+	--grey: #ccc;
+
+	--box-shadow-lg: 0.3em 0.3em 1em rgb(51, 51, 51, 0.2);
+	--box-shadow-sm: 0.3em 0.3em 1em rgb(51, 51, 51, 0.1);
+	--box-shadow-xs: 0em 0em 1em rgb(51, 51, 51, 0.1);
+
+	--padding-sm: 15px;
+}
+
+/* Typography */
+
+h1 {
+	font-size: 2.5em;
+	font-family: "Courier New", Courier, monospace;
+	color: var(--dark-green);
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 2em;
+	font-family: "Courier New", Courier, monospace;
+	color: var(--dark-green);
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.6em;
+	font-family: "Courier New", Courier, monospace;
+	color: var(--dark-green);
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 1.3em;
+	font-family: "Courier New", Courier, monospace;
+	color: var(--dark-green);
+	font-weight: 700;
+}
+
+p.p-sm {
+	color: var(--grey);
+}
+
+html {
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+* {
+	margin: 0;
+	/* padding: 0; */
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 30px;
+	background-color: var(--main-bg-color);
+}
+
+#app-container {
+	height: 100%;
+	width: 90%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	background-color: var(--main-bg-color);
+	border-radius: 10px;
+	box-shadow: var(--box-shadow-lg);
+
+	overflow: hidden;
+}
+
+#navbar {
+	height: 8%;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+
+	gap: 4em;
+
+	background-color: var(--white);
+	box-shadow: var(--box-shadow-sm);
+	z-index: 2;
+
+	/* Need to adjust the navbar under 800px */
+}
+
+#view-container {
+	height: 92%;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 20px;
+
+	background-color: var(--white);
+	z-index: 1;
+}
+
+.btn {
+	height: 100%;
+
+	font-size: 1.3em;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: 600;
+	color: var(--dark-green);
+
+	border: none;
+	border-bottom: 3px solid transparent;
+	background-color: inherit;
+
+	&.btn-active {
+		border-color: var(--dark-green);
+	}
+
+	span {
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+/* View WORLD MAP */
+#view-map {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	/* background-color: antiquewhite; */
+}
+
+#view-map .left-container {
+	height: 100%;
+	width: 70%;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+
+	/* background-color: pink; */
+	padding: 15px;
+	box-shadow: var(--box-shadow-sm);
+	border-radius: 8px;
+}
+
+.map-title-container {
+	height: 30%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	h1 {
+		align-self: flex-start;
+	}
+
+	p {
+		font-size: 14px;
+	}
+}
+
+.dropdown-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	margin: 1em 0 1.5em;
+
+	select {
+		max-width: 23%;
+		flex-grow: 1;
+		cursor: pointer;
+		border-color: #ccc;
+		border-radius: 5px;
+		height: 24px;
+	}
+}
+
+.world-map {
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	path {
+		cursor: pointer;
+	}
+}
+
+.map-legend {
+	align-self: flex-start;
+	width: 70%;
+	padding: 5px 10px;
+	border-radius: 4px;
+	box-shadow: var(--box-shadow-sm);
+	font-size: 12px;
+
+	.map-legend__colors {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1em;
+	}
+
+	.c0,
+	.c1,
+	.c2,
+	.c3,
+	.c4,
+	.c5,
+	.c6 {
+		display: flex;
+		align-items: center;
+		gap: 0.4em;
+		color: var(--dark-grey);
+
+		div {
+			height: 1.2em;
+			width: 1.4em;
+			border-radius: 4px;
+		}
+	}
+	.c0 div {
+		background-color: #eee;
+	}
+	.c1 div {
+		background-color: #d8e6e6;
+	}
+	.c2 div {
+		background-color: #d8f3dc;
+	}
+	.c3 div {
+		background-color: #57cba7;
+	}
+	.c4 div {
+		background-color: #379b86;
+	}
+	.c5 div {
+		background-color: #1c7169;
+	}
+	.c6 div {
+		background-color: #00474b;
+	}
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+#view-map .right-container {
+	width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	/* gap: 1em; */
+	z-index: 1;
+}
+
+.info,
+.countries-list {
+	box-shadow: var(--box-shadow-sm);
+	border-radius: 0.5em;
+	padding: 1em;
+}
+
+.info {
+	height: 30%;
+	width: 100%;
+
+	.country-flag {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		height: 3em;
+		width: 100%;
+
+		img {
+			height: 3em;
+			width: 4em;
+			border-radius: 6px;
+			overflow: hidden;
+			object-fit: cover;
+		}
+	}
+}
+
+.country-medals h2 {
+	font-family: "Noto Seriff", serif;
+	font-size: 3.8em;
+	line-height: 1em;
+}
+
+.countries-list {
+	height: 70%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 12px;
+
+	box-shadow: var(--box-shadow-sm);
+}
+
+.countries-header,
+.country-row {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 3fr);
+	align-items: center;
+}
+
+.countries-header {
+	flex-shrink: 0;
+	padding: 12px 0;
+
+	h4 {
+		margin: 0;
+	}
+}
+
+.medal-counts {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+
+	img {
+		display: block;
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+	}
+}
+
+#country-list {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.country-row {
+	flex-shrink: 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--grey);
+	white-space: nowrap;
+
+	&:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+}
+
+.country-info {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-width: 0;
+}
+
+.country-flag {
+	width: 2.5em;
+	height: 1.5em;
+	flex-shrink: 0;
+	border-radius: 6px;
+	object-fit: cover;
+}
+/* Section MEDAL EXPLORER */
+#view-country-explorer {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+#explorer_title {
+	height: 10%;
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#medals-container {
+	width: 100%;
+	height: 15%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
+
+	div {
+		height: 100%;
+		display: flex;
+		padding: 10px;
+		/* background-color: pink; */
+		flex-grow: 1;
+		box-shadow: var(--box-shadow-xs);
+		border-radius: 4px;
+	}
+}
+
+#medal-by-sports {
+	height: 30%;
+	/* background-color: goldenrod; */
+	box-shadow: var(--box-shadow-sm);
+	border-radius: 8px;
+}
+
+#graphs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	height: 45%;
+
+	h3 {
+		font-family: sans-serif;
+		font-weight: 600;
+		color: var(--dark-green);
+	}
+
+	div {
+		flex-grow: 1;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px;
+		height: 100%;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow-xs);
+	}
+}
+
+select {
+	width: 80px;
+}
+
+/* View COUNTRY EXPLORER */
+#country-explorer {
+	display: flex;
+}
+
+/* View PREDICT MEDALS */
+#predict-medals {
+	display: flex;
+}
+
+.tooltip {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--dark-grey);
+	padding: 10px;
+	border-radius: 4px;
+	position: fixed;
+	margin: 15px;
+	color: white;
+	pointer-events: none;
+	cursor: pointer;
+	font-family: sans-serif;
+}
+
+.hidden {
+	display: none;
+	opacity: 0;
+}

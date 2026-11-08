@@ -1,0 +1,123 @@
+<section id="view-map">
+	<div class="left-container">
+		<div class="map-title-container">
+			<h1>Explore Olympic Success</h1>
+			<div>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, ea! Tenetur quae, autem nisi eligendi,
+					inventore voluptas tempore doloremque architecto excepturi amet maxime laborum
+				</p>
+			</div>
+		</div>
+		<div class="dropdown-container">
+			<select class="dropdown-games" data-filter="season">
+				<option value="">All seasons</option>
+				<option value="Summer">Summer Games</option>
+				<option value="Winter">Winter Games</option>
+			</select>
+
+			<select class="dropdown-years" data-filter="year">
+				<option value="">All years</option>
+			</select>
+
+			<select class="dropdown-sports" data-filter="sport">
+				<option value="">All sports</option>
+			</select>
+
+			<select class="dropdown-sex" data-filter="sex">
+				<option value="">All genders</option>
+				<option value="M">M</option>
+				<option value="F">F</option>
+			</select>
+		</div>
+		<div class="world-map"></div>
+		<div class="map-legend">
+			<div class="map-legend__colors">
+				<div class="c0">
+					<div></div>
+					No data
+				</div>
+				<div class="c1">
+					<div></div>
+					0
+				</div>
+				<div class="c2">
+					<div></div>
+					1-5
+				</div>
+				<div class="c3">
+					<div></div>
+					6-20
+				</div>
+				<div class="c4">
+					<div></div>
+					21-50
+				</div>
+				<div class="c5">
+					<div></div>
+					51-100
+				</div>
+				<div class="c6">
+					<div></div>
+					100+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="tooltip" class="tooltip hidden"></div>
+
+	<div class="right-container">
+		<div id="country-info" class="info">
+			<div class="country-flag" id="country-flag">
+				<img class="flag" src="../placeholder_data/placeholder_flag.png" />
+				<h2 class="country">Brazil</h2>
+			</div>
+			<div class="country-medals" id="coumtry-medals">
+				<div class="py-[10px]"><p class="p-sm">Total medals</p></div>
+				<div class="flex w-full items-center">
+					<h2 idclass="w-2/10" id="medal-count">40</h2>
+					<div class="flex-1 flex flex-col justify-center items-center">
+						<div>
+							<p class="p-sm">Gold</p>
+						</div>
+						<div class="flex gap-[3px]">
+							<span><img height="24px" width="24px" src="../svg/gold-medal.svg" alt="Gold Medal" /></span>
+							<span id="gold-count">10</span>
+						</div>
+					</div>
+					<div class="flex-1 flex flex-col justify-center items-center">
+						<div>
+							<p class="p-sm">Silver</p>
+						</div>
+						<div class="flex gap-[3px]">
+							<span><img height="24px" width="24px" src="../svg/silver-medal.svg" alt="Silver Medal" /></span>
+							<span id="silver-count">10</span>
+						</div>
+					</div>
+					<div class="flex-1 flex flex-col justify-center items-center">
+						<div>
+							<p class="p-sm">Bronze</p>
+						</div>
+						<div class="flex gap-[3px]">
+							<span><img height="24px" width="24px" src="../svg/bronze-medal.svg" alt="Bronze Medal" /></span>
+							<span id="bronze-count">10</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="countries-list">
+			<div class="countries-header">
+				<h3>Country</h3>
+				<div class="medal-counts">
+					<img src="../svg/gold-medal.svg" alt="Gold Medal" />
+					<img src="../svg/silver-medal.svg" alt="Silver Medal" />
+					<img src="../svg/bronze-medal.svg" alt="Bronze Medal" />
+				</div>
+			</div>
+
+			<ul id="country-list"></ul>
+		</div>
+	</div>
+</section>
