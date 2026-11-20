@@ -1,0 +1,34 @@
+.country-flag {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	height: 3em;
+	width: 100%;
+
+	img {
+		height: 3em;
+		width: 4em;
+		border-radius: 6px;
+		overflow: hidden;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+}
+
+.country-info-container h2 {
+	line-height: 1em;
+	align-self: center;
+}
+
+.medal-count {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.4em;
+
+	h2 {
+		font-family: "Noto Seriff", serif;
+		font-size: 2.6em;
+		line-height: 1em;
+		text-align: left;
+	}
+}

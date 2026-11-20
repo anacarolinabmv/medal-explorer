@@ -13,9 +13,8 @@ class Store {
 		return this.state;
 	}
 
-	setState(updates) {
+	async setState(updates) {
 		this.state = { ...this.state, ...updates };
-		console.log();
 	}
 }
 

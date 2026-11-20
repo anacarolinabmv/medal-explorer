@@ -1,0 +1,17 @@
+#dropdown {
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+
+	padding: 1em 0;
+}
+
+select {
+	max-width: 23%;
+	flex-grow: 1;
+	cursor: pointer;
+	border-color: var(--grey);
+	border-radius: 5px;
+	height: 24px;
+}

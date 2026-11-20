@@ -6,13 +6,14 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="./src/style.css" />
 	</head>
+
 	<body>
 		<div id="app-container">
-			<div id="navbar">
-				<button class="btn btn-active" data-view="map"><span>World Map</span></button>
-				<button class="btn" data-view="explorer"><span>Country Explorer</span></button>
-				<button class="btn" data-view="predict"><span>Predict Medals</span></button>
-			</div>
+			<nav id="navbar">
+				<button class="btn btn-active" data-view="map"><a>World Map</a></button>
+				<button class="btn" data-view="explorer"><a>Country Explorer</a></button>
+				<button class="btn" data-view="predict"><a>Predict Medals</a></button>
+			</nav>
 			<main id="view-container"></main>
 		</div>
 		<script type="module" src="./src/main.js"></script>

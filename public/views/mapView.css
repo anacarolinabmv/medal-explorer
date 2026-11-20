@@ -1,0 +1,96 @@
+#map-view {
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	gap: 1em;
+}
+
+aside.l {
+	height: 100%;
+	width: 66%;
+	flex-shrink: 0;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+
+	padding: 15px;
+	box-shadow: var(--box-shadow-sm);
+	border-radius: 8px;
+
+	h1 {
+		text-align: left;
+		width: 100%;
+	}
+}
+
+aside.r {
+	width: 34%;
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-between;
+	/* box-shadow: var(--box-shadow-sm); */
+	/* border-radius: 8px; */
+	gap: 1em;
+}
+
+#dropdown-container {
+	width: 100%;
+}
+
+#map-container {
+	height: 100%;
+	width: 100%;
+}
+
+#legend-container {
+	width: 100%;
+	padding-top: 6px;
+
+	display: flex;
+}
+
+#tooltip {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--dark-grey);
+	padding: 10px;
+	border-radius: 4px;
+	position: fixed;
+	margin: 15px;
+	color: var(--white);
+	pointer-events: none;
+	cursor: pointer;
+	font-family: sans-serif;
+}
+
+.hidden {
+	display: none;
+	opacity: 0;
+}
+
+.country-info-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	box-shadow: var(--box-shadow-sm);
+	border-radius: 8px;
+	padding: 1em;
+}
+
+.medal-info-container {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+
+	display: flex;
+	flex-direction: column;
+
+	box-shadow: var(--box-shadow-sm);
+	padding: 1em;
+}

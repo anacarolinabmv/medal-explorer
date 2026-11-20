@@ -1,0 +1,62 @@
+@import url("../../style.css");
+
+#legend {
+	display: flex;
+
+	border-radius: 4px;
+	font-size: 12px;
+
+	gap: 1em;
+}
+
+.color {
+	height: 1.2em;
+	width: 1.4em;
+	border-radius: 4px;
+}
+
+.label-box {
+	display: flex;
+	align-items: center;
+	gap: 0.4em;
+	color: var(--dark-grey);
+
+	&:nth-child(1) {
+		.color {
+			background-color: #eee;
+		}
+	}
+	&:nth-child(2) {
+		.color {
+			background-color: #d8e6e6;
+		}
+	}
+	&:nth-child(3) {
+		.color {
+			background-color: #d8f3dc;
+		}
+	}
+	&:nth-child(4) {
+		.color {
+			background-color: #57cba7;
+		}
+	}
+
+	&:nth-child(5) {
+		.color {
+			background-color: #379b86;
+		}
+	}
+
+	&:nth-child(6) {
+		.color {
+			background-color: #1c7169;
+		}
+	}
+
+	&:nth-child(7) {
+		.color {
+			background-color: #00474b;
+		}
+	}
+}

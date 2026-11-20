@@ -1,0 +1,41 @@
+.medal-info-container div {
+	display: grid;
+	grid-template-columns: 5fr 1fr 1fr 1fr;
+	align-items: center;
+
+	img {
+		justify-self: center;
+		object-fit: cover;
+	}
+}
+
+.medal-info-container ul {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.medal-info-container li {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
+	height: 2.23em;
+	color: var(--dark-grey);
+	border-bottom: 1px solid #eee;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.medal-info-container li img {
+	height: 20px;
+	width: 26px;
+	border-radius: 4px;
+}
+
+.medal-info-container li p {
+	font-size: 14px;
+	text-align: right;
+}
